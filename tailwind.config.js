@@ -10,10 +10,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        softBlack: '#232323',
-        softRed: '#d83636',
+        softBlack: '#080409',
+        softPurple: '#492153',
         softWhite: '#eae8e3',
-        softGray: '#e1e1e1',
+        darkGreen: '#1a2527',
       },
     },
   },

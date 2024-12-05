@@ -41,7 +41,7 @@ export default function Nav({ activeSection, setActiveSection }) {
         right: 0, 
         width: '100%', 
         zIndex: 1000, 
-        backgroundColor: '#000'
+        backgroundColor: '#0d1b1e'
       }}
       disableAnimation 
       isBordered

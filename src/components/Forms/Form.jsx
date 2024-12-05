@@ -2,7 +2,7 @@ import { Input, Button, Textarea } from "@nextui-org/react";
 
 export default function Forms() {
   return (
-    <div style={{ backgroundColor: "#232323", padding: "2em", borderRadius: "8px"}} className="w-96 gap-4">
+    <div style={{ backgroundColor: "#282828", padding: "2em", borderRadius: "8px"}} className="w-96 gap-4">
       <h2 style={{ color: "#fff", textAlign: "center" }}>Entre em Contato</h2>
       
       <div style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
@@ -34,7 +34,7 @@ export default function Forms() {
     />
       </div>
 
-      <Button  style={{ backgroundColor: "#841010", color:"#fff", marginTop: "1em", width: "100%" }}>
+      <Button  style={{ backgroundColor: "#db5375", color:"#fff", marginTop: "1em", width: "100%" }}>
         Enviar
       </Button>
     </div>

@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from "@nextui-org/react";
 import { FaInstagram, FaBehance } from "react-icons/fa";
+import allieImg from "../../assets/allie.png";
 
 const AboutMe = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-around p-4 w-[70vw] mx-auto">
+    <div className="flex flex-col md:flex-row justify-around p-4 w-[50vw] mx-auto">
       <div className="flex flex-col justify-center md:w-3/4">
         <h2 className="text-3xl font-bold mb-4">Sobre Mim</h2>
         <p className="text-lg leading-relaxed">
@@ -25,7 +26,7 @@ const AboutMe = () => {
 
       <div className="flex justify-center items-center md:w-1/4">
         <img 
-          src="https://mir-s3-cdn-cf.behance.net/user/115/dde4f8452789531.65e325c211097.jpg" 
+          src={allieImg}
           alt="Aline Lima Cabral" 
           className="rounded-full w-56 h-56 object-cover shadow-lg"
         />
