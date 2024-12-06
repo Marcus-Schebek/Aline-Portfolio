@@ -25,7 +25,7 @@ function App() {
       <Nav activeSection={activeSection} setActiveSection={setActiveSection} />
 
       <div className="flex justify-center items-start min-h-screen w-screen pt-[64px] overflow-hidden">
-        <div className="p-4 rounded-lg shadow-lg w-full max-w-7xl">
+        <div className="p-4 w-full max-w-7xl">
           {renderSection()}
         </div>
       </div>

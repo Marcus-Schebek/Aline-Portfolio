@@ -11,7 +11,6 @@ import {
 } from "@material-tailwind/react";
 
 const ModalWithImage = ({ isOpen, onClose, selectedItem }) => {
-  const [isFavorite, setIsFavorite] = useState(false);
 
   if (!selectedItem) return null;
 
@@ -20,7 +19,7 @@ const ModalWithImage = ({ isOpen, onClose, selectedItem }) => {
       open={isOpen}
       handler={onClose}
       size="xl"
-      className="max-h-[85vh] max-w-[50vw] mx-auto"
+      className="max-h-[85vh] max-w-[50vw] mx-auto mt-12"
     >
       <DialogHeader className="justify-between">
         <div className="flex items-center gap-3">
@@ -51,16 +50,17 @@ const ModalWithImage = ({ isOpen, onClose, selectedItem }) => {
           <IconButton
             variant="text"
             size="sm"
-            color={isFavorite ? "red" : "blue-gray"}
-            onClick={() => setIsFavorite((cur) => !cur)}
+            onClick={onClose}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              fill="currentColor"
-              className="h-5 w-5"
+              fill="#000"
+              className="h-8 w-8"
             >
-              <path d="M11.645 20.91l-.007-.003-.022-.012a15.247 15.247 0 01-.383-.218 25.18 25.18 0 01-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0112 5.052 5.5 5.5 0 0116.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 01-4.244 3.17 15.247 15.247 0 01-.383.219l-.022.012-.007.004-.003.001a.752.752 0 01-.704 0l-.003-.001z" />
+              <path fillRule="evenodd"
+              d="M6.225 6.225a.75.75 0 011.06 0L12 10.94l4.715-4.715a.75.75 0 111.06 1.06L13.06 12l4.715 4.715a.75.75 0 11-1.06 1.06L12 13.06l-4.715 4.715a.75.75 0 01-1.06-1.06L10.94 12 6.225 7.285a.75.75 0 010-1.06z"
+              clipRule="evenodd"/>
             </svg>
           </IconButton>
         </div>

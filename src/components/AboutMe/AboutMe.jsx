@@ -5,7 +5,7 @@ import allieImg from "../../assets/allie.png";
 
 const AboutMe = () => {
   return (
-    <div className="flex flex-col md:flex-row justify-around p-4 w-[50vw] mx-auto">
+    <div className="flex flex-col md:flex-row justify-around p-4 w-[50vw] mx-auto align-middle">
       <div className="flex flex-col justify-center md:w-3/4">
         <h2 className="text-3xl font-bold mb-4">Sobre Mim</h2>
         <p className="text-lg leading-relaxed">
