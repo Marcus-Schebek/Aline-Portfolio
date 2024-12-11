@@ -25,10 +25,12 @@ function App() {
       <Nav activeSection={activeSection} setActiveSection={setActiveSection} />
 
       <div className="flex justify-center items-start min-h-screen w-screen pt-[64px] overflow-hidden">
-        <div className="p-4 w-full max-w-7xl">
-          {renderSection()}
-        </div>
+        <div className="p-4 w-full max-w-7xl">{renderSection()}</div>
       </div>
+
+      <footer className="text-center p-4 bg-gray-800 text-white w-full fixed bottom-0">
+        <p>Criado por Marcus Schebek© - 2025</p>
+      </footer>
     </>
   );
 }

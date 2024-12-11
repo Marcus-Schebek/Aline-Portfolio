@@ -1,78 +1,90 @@
+import { useState } from "react";
 import { Input, Textarea } from "@nextui-org/react";
 
 export default function Forms() {
+  const [status, setStatus] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // Impede o redirecionamento padrão do formulário
+
+    const formData = new FormData(event.target);
+    try {
+      const response = await fetch("https://formsubmit.co/aline.contactart@gmail.com", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      setStatus("error");
+    }
+  };
+
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "70vh",
-      }}
-    >
+    <div className="flex justify-center items-center h-screen bg-gray-900">
       <form
-        action="https://formsubmit.co/aline.contactart@gmail.com" // Seu email
-        method="POST"
-        style={{
-          backgroundColor: "#282828",
-          padding: "2em",
-          borderRadius: "8px",
-          boxShadow: "0 4px 10px rgba(0, 0, 0, 0.3)",
-        }}
-        className="w-96 gap-4"
+        onSubmit={handleSubmit}
+        className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md space-y-4"
       >
-        <h2 style={{ color: "#fff", textAlign: "center", marginBottom: "1em" }}>
+        <h2 className="text-white text-center text-xl font-bold mb-4">
           Entre em Contato
         </h2>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: "1em" }}>
+        {/* Campo oculto para impedir redirecionamento */}
+        <input type="hidden" name="_next" value="none" />
+
+        <div className="space-y-4">
           <Input
-            variant="underlined"
-            type="text"
             label="Nome"
+            type="text"
             name="name"
             required
-            color="#fff"
+            className="text-white"
+            aria-label="Nome"
           />
           <Input
-            variant="underlined"
-            type="text"
             label="Celular"
+            type="text"
             name="phone"
             required
-            color="#fff"
+            className="text-white"
+            aria-label="Celular"
           />
           <Input
-            variant="underlined"
-            type="email"
             label="Email"
+            type="email"
             name="email"
             required
-            color="#fff"
+            className="text-white"
+            aria-label="Email"
           />
           <Textarea
-            variant="underlined"
-            placeholder="Sobre o que você quer falar?"
+            label="Mensagem"
             name="message"
             required
-            className="max-w-xs"
+            className="text-white"
+            placeholder="Sobre o que você quer falar?"
+            aria-label="Mensagem"
           />
         </div>
+
         <button
           type="submit"
-          style={{
-            backgroundColor: "#db5375",
-            color: "#fff",
-            marginTop: "1em",
-            width: "100%",
-            padding: "0.75em",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-          }}
+          className="bg-pink-500 text-white mt-4 w-full py-2 rounded hover:bg-pink-600 transition-colors"
         >
           Enviar
         </button>
+
+        {status === "success" && (
+          <p className="text-green-500 text-center mt-4">Mensagem enviada com sucesso!</p>
+        )}
+        {status === "error" && (
+          <p className="text-red-500 text-center mt-4">Ocorreu um erro. Tente novamente.</p>
+        )}
       </form>
     </div>
   );

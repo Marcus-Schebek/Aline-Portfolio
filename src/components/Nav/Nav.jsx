@@ -11,7 +11,6 @@ import {
 import { FaInstagram, FaBehance } from "react-icons/fa";
 import { useMediaQuery } from "react-responsive";
 import { useState } from "react";
-import "./Nav.css";
 
 export default function Nav({ activeSection, setActiveSection }) {
   const isMobile = useMediaQuery({ maxWidth: 640 });
@@ -41,7 +40,7 @@ export default function Nav({ activeSection, setActiveSection }) {
         right: 0, 
         width: '100%', 
         zIndex: 1000, 
-        backgroundColor: '#0d1b1e'
+        backgroundColor: '#1f2937'
       }}
       disableAnimation 
       isBordered

@@ -66,13 +66,13 @@ const ModalWithImage = ({ isOpen, onClose, selectedItem }) => {
         </div>
       </DialogHeader>
       <DialogBody className="overflow-y-auto max-h-[70vh] px-4">
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1">
           {selectedItem.images.map((image, index) => (
             <img
               key={index}
               src={image}
               alt={`Image ${index + 1}`}
-              className="w-full h-auto rounded-lg object-cover"
+              className="w-full h-auto object-cover"
             />
           ))}
         </div>
