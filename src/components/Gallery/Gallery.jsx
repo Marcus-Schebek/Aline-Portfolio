@@ -9,7 +9,6 @@ import {
 import Data from "../../assets/behance_data.json";
 import ModalWithImage from "../Modal/ModalWithImage";
 
-
 const Gallery = () => {
   const [data, setData] = useState([]);
   const [activeTab, setActiveTab] = useState(0);
@@ -17,7 +16,9 @@ const Gallery = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setData(Data);
+    // Ordena os dados de forma decrescente pelo ID antes de armazená-los no estado
+    const sortedData = [...Data].sort((a, b) => b.id - a.id);
+    setData(sortedData);
   }, []);
 
   const handleOpen = (item) => {
@@ -34,13 +35,13 @@ const Gallery = () => {
     <div className="p-6">
       <Tabs value={activeTab} onChange={(value) => setActiveTab(value)}>
         <TabsHeader>
-          <Tab value={0} className={"text-[#db5375]"}>
+          <Tab value={0} className="text-[#db5375]">
             Quadrinhos
           </Tab>
-          <Tab value={1} className={"text-[#db5375]"}>
+          <Tab value={1} className="text-[#db5375]">
             Design
           </Tab>
-          <Tab value={2} className={"text-[#db5375]"}>
+          <Tab value={2} className="text-[#db5375]">
             Ilustrações
           </Tab>
         </TabsHeader>
