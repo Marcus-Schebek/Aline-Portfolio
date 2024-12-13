@@ -28,21 +28,21 @@ export default function Nav({ activeSection, setActiveSection }) {
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
-    setMenuOpen(false); 
+    setMenuOpen(false);
   };
 
   return (
-    <Navbar 
+    <Navbar
       style={{
-        position: 'fixed', 
-        top: 0, 
-        left: 0, 
-        right: 0, 
-        width: '100%', 
-        zIndex: 1000, 
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        width: '100%',
+        zIndex: 1000,
         backgroundColor: '#1f2937'
       }}
-      disableAnimation 
+      disableAnimation
       isBordered
     >
       <NavbarContent justify="start">
@@ -72,7 +72,7 @@ export default function Nav({ activeSection, setActiveSection }) {
         </NavbarContent>
       )}
 
-      <NavbarContent justify="end">
+      <NavbarContent justify="end" >
         <NavbarItem>
           <Link href="https://www.instagram.com/artofalinecali" target="_blank" className="text-softWhite hover:text-softRed flex items-center">
             <FaInstagram size={24} />
@@ -86,13 +86,14 @@ export default function Nav({ activeSection, setActiveSection }) {
       </NavbarContent>
 
       {isMobile && (
-        <NavbarMenu isOpen={menuOpen} className="Nav-menu"> 
+        <NavbarMenu isOpen={menuOpen} 
+         className="Nav-menu bg-[#111827]">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={index}>
               <Link
                 onClick={() => handleSectionChange(item.name)}
                 className="w-full"
-                style={{ 
+                style={{
                   color: activeSection === item.name ? 'var(--tw-text-softRed)' : 'var(--tw-text-softWhite)'
                 }}
                 href="#"

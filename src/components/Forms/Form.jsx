@@ -9,9 +9,12 @@ export default function Forms() {
 
     const formData = new FormData(event.target);
     try {
-      const response = await fetch("https://formsubmit.co/aline.contactart@gmail.com", {
+      const response = await fetch("https://api.staticforms.xyz/submit", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(Object.fromEntries(formData)),
       });
 
       if (response.ok) {
@@ -25,7 +28,7 @@ export default function Forms() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-900">
+    <div className="flex justify-center items-start mt-36 h-screen bg-gray-900">
       <form
         onSubmit={handleSubmit}
         className="bg-gray-800 p-6 rounded-lg shadow-lg w-full max-w-md space-y-4"
@@ -34,8 +37,8 @@ export default function Forms() {
           Entre em Contato
         </h2>
 
-        {/* Campo oculto para impedir redirecionamento */}
-        <input type="hidden" name="_next" value="none" />
+        {/* Campos ocultos exigidos pelo Static Forms */}
+        <input type="hidden" name="accessKey" value={import.meta.env.VITE_STATIC_FORMS_ACCESS_KEY} />
 
         <div className="space-y-4">
           <Input
