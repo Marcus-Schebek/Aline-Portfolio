@@ -28,7 +28,7 @@ function App() {
         <div className="p-4 w-full max-w-7xl">{renderSection()}</div>
       </div>
 
-      <footer className="text-center p-4 bg-gray-800 text-white w-full fixed bottom-0">
+      <footer className="text-center p-4 bg-gray-800 text-white w-full bottom-0">
         <p>Criado por Marcus Schebek© - 2025</p>
       </footer>
     </>
